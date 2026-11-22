@@ -56,10 +56,10 @@ header{background:var(--site-surface);border-bottom:1px solid var(--site-border)
 .card li{color:var(--site-muted);font-size:15px;padding:6px 0;border-bottom:1px dashed var(--site-border)}
 .card li:last-child{border-bottom:0}
 .case{border-left:4px solid var(--site-accent)}
-.kit{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
-.kit div{background:var(--site-bg);border-radius:8px;padding:10px;text-align:center}
-.kit b{display:block;font-size:12px;color:var(--site-muted);text-transform:uppercase}
-.kit span{font-size:14px;font-weight:600;word-break:break-word}
+.kit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.kit div{background:var(--site-bg);border-radius:8px;padding:9px 8px;text-align:center;min-width:0}
+.kit b{display:block;font-size:11px;color:var(--site-muted);text-transform:uppercase;letter-spacing:.3px}
+.kit span{font-size:14px;font-weight:600;overflow-wrap:anywhere}
 form{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(28px * var(--site-space))}
 label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}
 input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--site-border);border-radius:var(--site-radius);font-size:16px;background:var(--site-bg);color:var(--site-fg);font-family:inherit}
@@ -92,7 +92,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   p.sub{font-size:16px}
   .stat b{font-size:22px}
   .wrap{padding:20px 16px}
-  .kit{grid-template-columns:repeat(2,1fr)}
   .links a:not(.btn){display:none}
   .links{gap:10px;flex-wrap:nowrap}
   .nav{padding:12px 14px}
@@ -111,7 +110,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   h1{font-size:25px}
   .stats,.cards,.photos{gap:12px}
   .cta-row{gap:10px}
-  .kit{grid-template-columns:1fr}
 }
 </style>
 <script type="application/ld+json">
