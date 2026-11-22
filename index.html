@@ -122,11 +122,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <b>quotation within 24 hours</b>, with free DFM (design-for-manufacturing) feedback.</p>
         <div class="trust">
           <span class="pill">NDA on request</span>
-          <span class="pill">STEP / IGES / PDF accepted</span>
+          <span class="pill">STEP / IGES / PDF via secure link</span>
           <span class="pill">No minimum for samples</span>
         </div>
       </div>
-      <form id="rfq" novalidate>
+      <form id="rfq" name="rfq" method="POST" action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field" netlify-recaptcha="false" novalidate>
+        <input type="hidden" name="form-name" value="rfq">
+        <p class="note" style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="row">
           <div><label>Name *</label><input required name="name" placeholder="Your name"></div>
           <div><label>Work Email *</label><input required type="email" name="email" placeholder="you@company.com"></div>
@@ -145,13 +147,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
             <option>Turn-Mill</option><option>Wire EDM</option><option>Not sure — please advise</option>
           </select></div>
         </div>
-        <label>Drawing / 3D Model (STEP, IGES, PDF)</label>
-        <input type="file" name="file" accept=".step,.stp,.iges,.igs,.pdf,.dwg,.dxf,.zip">
+        <label>Drawing / 3D Model link (Google Drive, Dropbox, WeTransfer...)</label>
+        <input name="drawing_link" placeholder="https://...  (or leave blank — we'll email you a secure upload link)">
         <label>Project Details</label>
         <textarea name="msg" rows="3" placeholder="Tolerances, finish, deadline..."></textarea>
         <br><button class="btn" type="submit">Submit RFQ → Get Quote in 24h</button>
-        <p class="note">Demo form: submissions are simulated on this practice site. On the production site this sends directly to the client's RFQ inbox with WeChat/email alerts.</p>
-        <div class="ok" id="ok">✔ RFQ received (demo). In production, this email lands in the client's inbox within seconds, and a reply goes out within 24 hours.</div>
+        <p class="note">Your RFQ goes straight to our quote inbox. We reply within 24 hours. No drawing handy? Leave the link blank and we'll send you a secure upload link by email.</p>
+        <div class="ok" id="ok">✔ RFQ received — check your inbox for our confirmation. A quote follows within 24 hours.</div>
       </form>
     </div>
   </div>
@@ -197,11 +199,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <script>
 document.getElementById('rfq').addEventListener('submit',function(e){
-  e.preventDefault();
   var f=e.target;
-  if(!f.name.value||!f.email.value){alert('Please fill in Name and Work Email.');return;}
-  document.getElementById('ok').style.display='block';
-  f.reset();
+  if(!f.elements['name'].value||!f.elements['email'].value){e.preventDefault();alert('Please fill in Name and Work Email.');return;}
+  e.preventDefault();
+  var data=new URLSearchParams();
+  data.append('form-name','rfq');
+  ['name','email','country','qty','material','process','drawing_link','msg'].forEach(function(k){
+    data.append(k,f.elements[k]?f.elements[k].value:'');
+  });
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:data.toString()})
+    .then(function(r){
+      if(r.ok){document.getElementById('ok').style.display='block';f.reset();window.scrollTo(0,document.getElementById('ok').getBoundingClientRect().top+window.pageYOffset-120);}
+      else{f.submit();}
+    })
+    .catch(function(){f.submit();});
 });
 </script>
 </body>
