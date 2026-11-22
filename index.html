@@ -9,17 +9,16 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="CNC Machining Parts from China — Quote in 24h | PartForge">
 <meta property="og:description" content="Send a drawing, get price + lead time + DFM notes in 24 hours. 3/5-axis milling, CNC turning, anodizing and inspection in our own Dongguan facility.">
-<meta property="og:image" content="images/hero.jpg">
+<meta property="og:image" content="https://huangrunshuaige.com/images/hero.jpg">
 <meta property="og:url" content="https://huangrunshuaige.com/">
+<link rel="canonical" href="https://huangrunshuaige.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0f16'/%3E%3Cpath d='M8 22V10h7a4 4 0 0 1 0 8H8' stroke='%232f81f7' stroke-width='2.6' fill='none'/%3E%3Cpath d='M18 22l5-6 5 4' stroke='%23f0a020' stroke-width='2.6' fill='none'/%3E%3C/svg%3E">
-<!-- Design skeleton imitated from benchmark B2B sites recorded in 《B端独立站20例_带出处版》:
-     kangfanmould.com (utility bar with email+phone / image hero + 2 CTAs / "我们是谁" text+bullets+photo /
-     4-up product grid + "查看全部" / FAQ / "Tell us what you need produced" CTA band / 4-column footer),
-     bodor.com (photo-led capability cards with hover panel, applications, events/news, global numbers band,
-     sticky Get-a-Quote with qualification dropdowns: material / thickness / when is your procurement),
-     newayvalve.com + doingcnc.com (product category tree, spec tables, materials+tolerances, quality/trust page). -->
+<!-- Layout pattern: standard B2B inquiry-site structure (utility bar, hero with two calls to
+     action, capability cards, materials and process tables, quality paperwork, case grid,
+     FAQ, closing call to action, four-column footer). Everything below is generic and written
+     for this brand. -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"PartForge","url":"https://huangrunshuaige.com/","logo":"images/hero.jpg","description":"Custom CNC machining service in Dongguan, China: milled and turned parts, tolerances to ±0.01mm, samples in 7 days."}
+{"@context":"https://schema.org","@type":"Organization","name":"PartForge","url":"https://huangrunshuaige.com/","logo":"https://huangrunshuaige.com/images/hero.jpg","description":"Custom CNC machining service in Dongguan, China: milled and turned parts, tolerances to ±0.01mm, samples in 7 days."}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -90,7 +89,7 @@ section.tight{padding:calc(52px * var(--site-space)) 0}
 .dark h2,.dark h3,.dark h4{color:#fff}
 .dark .lead,.dark p{color:#b6c0cf}
 
-/* ---------- 1. utility bar (kangfan/bodor: email + phone + language live above the nav) ---------- */
+/* ---------- 1. utility bar (contact + reply promise above the nav) ---------- */
 .bar{background:var(--site-dark);color:#c8d2e0;font-size:13px}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:40px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
 .bar-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-width:0}
@@ -120,7 +119,7 @@ section.tight{padding:calc(52px * var(--site-space)) 0}
 .mnav a:first-child{border-top:0}
 .mnav.open{display:block}
 
-/* ---------- 3. hero (bodor: full-bleed photo + big benefit headline + two CTAs + numbers) ---------- */
+/* ---------- 3. hero (full-bleed photo, benefit headline, two CTAs, key numbers) ---------- */
 .hero{position:relative;background:var(--site-dark);color:#fff;padding:0;overflow:hidden}
 .hero-media{position:absolute;inset:0}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
@@ -141,7 +140,7 @@ section.tight{padding:calc(52px * var(--site-space)) 0}
 .hero-strip b{display:block;font-size:calc(26px * var(--site-type));font-weight:800;color:#fff;line-height:1.2}
 .hero-strip small{display:block;color:#a9b5c5;font-size:13px;line-height:1.4;margin-top:2px}
 
-/* ---------- 4. capabilities (bodor photo cards + kangfan 4-up grid with "view all") ---------- */
+/* ---------- 4. capabilities (photo cards + 4-up grid with "view all") ---------- */
 .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:calc(22px * var(--site-space))}
 .card{border:1px solid var(--site-line);border-radius:var(--site-radius);background:#fff;overflow:hidden;display:flex;flex-direction:column;
   min-width:0;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
@@ -159,7 +158,7 @@ section.tight{padding:calc(52px * var(--site-space)) 0}
   padding-top:22px;border-top:1px solid var(--site-line)}
 .grid-actions p{margin:0;color:var(--site-muted);font-size:14.5px;min-width:0}
 
-/* ---------- 5. about (kangfan "我们是谁": copy + bullets + photo) ---------- */
+/* ---------- 5. about (who you are: copy + bullets + photo) ---------- */
 .split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:calc(46px * var(--site-space));align-items:center}
 .split.rev{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
 .split .txt{min-width:0}
@@ -237,7 +236,7 @@ form.rfq .sub{color:var(--site-muted);font-size:14.5px;margin:0 0 18px}
 label{display:block;font-size:13.5px;font-weight:650;margin-bottom:6px;color:#333c49}
 input,select,textarea{width:100%;min-width:0;max-width:100%;font-family:inherit;font-size:16px;color:var(--site-fg);
   background:#fff;border:1px solid #cdd5e0;border-radius:8px;padding:11px 12px}
-select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c6675' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+select{text-overflow:ellipsis;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c6675' stroke-width='2' fill='none'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
 input:focus,select:focus,textarea:focus{outline:2px solid rgba(47,129,247,.35);border-color:var(--site-accent)}
 textarea{resize:vertical;min-height:92px}
@@ -255,7 +254,7 @@ details[open] summary:after{content:"–"}
 details .a{padding:0 20px 18px;color:var(--site-muted);font-size:15.5px;border-top:0}
 details[open] .a{border-top:1px solid var(--site-line);padding-top:14px}
 
-/* ---------- 13. CTA band (kangfan "告诉我们您需要生产什么") ---------- */
+/* ---------- 13. CTA band (tell us what you need produced) ---------- */
 .band{background:var(--site-dark);color:#fff;text-align:center;padding:calc(58px * var(--site-space)) 0}
 .band h2{margin-bottom:10px}
 .band p{color:#b6c0cf;max-width:60ch;margin:0 auto 22px}
@@ -274,7 +273,7 @@ footer p{margin:0 0 12px}
   gap:14px;flex-wrap:wrap;font-size:13px;color:#6f7a89}
 .fbot a{display:inline;padding:0;color:#6f7a89}
 
-/* ---------- mobile sticky quote (bodor/kangfan floating contact button) ---------- */
+/* ---------- mobile sticky quote (floating contact button) ---------- */
 .float{display:none;position:fixed;right:12px;bottom:12px;z-index:70}
 .float .btn{box-shadow:0 10px 24px rgba(47,129,247,.4)}
 
@@ -335,11 +334,10 @@ footer p{margin:0 0 12px}
 <div class="bar">
   <div class="wrap">
     <div class="bar-left">
-      <span>🏭 <b>PartForge CNC</b> · Dongguan, Guangdong, China</span>
+      <span><b>PartForge CNC</b> · Dongguan, Guangdong, China</span>
       <i class="sep"></i>
       <span>Reply within <b>24h</b> · Mon–Sat 8:30–20:30 GMT+8</span>
       <i class="sep"></i>
-      <span>English / 中文</span>
     </div>
     <a class="btn sm" href="#rfq">Get a Quote</a>
   </div>
@@ -734,11 +732,11 @@ footer p{margin:0 0 12px}
           </div>
           <div class="f"><label for="f-timeline">When do you need it?</label>
             <select id="f-timeline" name="timeline">
-              <option>Immediately — need a production slot</option>
+              <option>Ready to start now</option>
               <option>Within 2 months</option>
               <option>Within 6 months</option>
               <option>Within 12 months</option>
-              <option>Just budgeting / comparing suppliers</option>
+              <option>Budgeting / comparing</option>
             </select>
           </div>
         </div>
