@@ -126,7 +126,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <span class="pill">No minimum for samples</span>
         </div>
       </div>
-      <form id="rfq" name="rfq" method="POST" action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field" netlify-recaptcha="false" novalidate>
+      <form id="rfq" name="rfq" method="POST" action="/thanks.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
         <input type="hidden" name="form-name" value="rfq">
         <p class="note" style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="row">
@@ -202,17 +202,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <script>
 document.getElementById('rfq').addEventListener('submit',function(e){
   var f=e.target;
-  if(!f.elements['name'].value||!f.elements['email'].value){e.preventDefault();alert('Please fill in Name and Work Email.');return;}
-  e.preventDefault();
+  if(!f.elements['name'].value||!f.elements['email'].value){
+    e.preventDefault();
+    alert('Please fill in Name and Work Email.');
+    return;
+  }
   var btn=f.querySelector('button[type=submit]');
   btn.disabled=true;btn.textContent='Sending…';
-  fetch('/',{method:'POST',body:new FormData(f)})
-    .then(function(r){
-      btn.disabled=false;btn.textContent='Submit RFQ → Get Quote in 24h';
-      if(r.ok){document.getElementById('ok').style.display='block';f.reset();window.scrollTo(0,document.getElementById('ok').getBoundingClientRect().top+window.pageYOffset-120);}
-      else{alert('Submission failed ('+r.status+'). Please email your drawing to quotes@partforge.example directly.');}
-    })
-    .catch(function(){btn.disabled=false;btn.textContent='Submit RFQ → Get Quote in 24h';alert('Network problem — please email your drawing directly.');});
+  setTimeout(function(){btn.disabled=false;btn.textContent='Submit RFQ → Get Quote in 24h';},8000);
+  // Native POST to Netlify (action="/thanks.html") — no fetch, no interception.
 });
 </script>
 </body>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFQ form definition</title>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<!-- Static form definition skeleton so Netlify form detection always registers
+     the rfq form with exactly these field names, even if the main page changes.
+     Field names must match index.html's rfq form. -->
+<form name="rfq" method="POST" action="/thanks.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="rfq">
+  <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+  <input name="name">
+  <input name="email" type="email">
+  <input name="country">
+  <input name="qty">
+  <select name="material"><option>Aluminum (6061/7075)</option></select>
+  <select name="process"><option>3-Axis Milling</option></select>
+  <input type="file" name="file">
+  <input name="drawing_link">
+  <textarea name="msg"></textarea>
+</form>
+</body>
+</html>
