@@ -122,7 +122,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <b>quotation within 24 hours</b>, with free DFM (design-for-manufacturing) feedback.</p>
         <div class="trust">
           <span class="pill">NDA on request</span>
-          <span class="pill">STEP / IGES / PDF via secure link</span>
+          <span class="pill">STEP / IGES / PDF — attach ≤8MB or paste a link</span>
           <span class="pill">No minimum for samples</span>
         </div>
       </div>
@@ -147,12 +147,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
             <option>Turn-Mill</option><option>Wire EDM</option><option>Not sure — please advise</option>
           </select></div>
         </div>
-        <label>Drawing / 3D Model link (Google Drive, Dropbox, WeTransfer...)</label>
-        <input name="drawing_link" placeholder="https://...  (or leave blank — we'll email you a secure upload link)">
+        <label>Drawing / 3D Model — attach file (max 8 MB: PDF, DXF, small STEP/IGES)</label>
+        <input type="file" name="file" accept=".step,.stp,.iges,.igs,.pdf,.dwg,.dxf,.zip">
+        <label>...or paste a cloud link (for large STEP/ZIP drawings)</label>
+        <input name="drawing_link" placeholder="https://drive.google.com/...  (leave both blank and we'll email you a secure upload link)">
         <label>Project Details</label>
         <textarea name="msg" rows="3" placeholder="Tolerances, finish, deadline..."></textarea>
         <br><button class="btn" type="submit">Submit RFQ → Get Quote in 24h</button>
-        <p class="note">Your RFQ goes straight to our quote inbox. We reply within 24 hours. No drawing handy? Leave the link blank and we'll send you a secure upload link by email.</p>
+        <p class="note">Your RFQ goes straight to our quote inbox. We reply within 24 hours. Drawings over 8 MB: use the cloud link instead of the file button.</p>
         <div class="ok" id="ok">✔ RFQ received — check your inbox for our confirmation. A quote follows within 24 hours.</div>
       </form>
     </div>
@@ -202,17 +204,15 @@ document.getElementById('rfq').addEventListener('submit',function(e){
   var f=e.target;
   if(!f.elements['name'].value||!f.elements['email'].value){e.preventDefault();alert('Please fill in Name and Work Email.');return;}
   e.preventDefault();
-  var data=new URLSearchParams();
-  data.append('form-name','rfq');
-  ['name','email','country','qty','material','process','drawing_link','msg'].forEach(function(k){
-    data.append(k,f.elements[k]?f.elements[k].value:'');
-  });
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:data.toString()})
+  var btn=f.querySelector('button[type=submit]');
+  btn.disabled=true;btn.textContent='Sending…';
+  fetch('/',{method:'POST',body:new FormData(f)})
     .then(function(r){
+      btn.disabled=false;btn.textContent='Submit RFQ → Get Quote in 24h';
       if(r.ok){document.getElementById('ok').style.display='block';f.reset();window.scrollTo(0,document.getElementById('ok').getBoundingClientRect().top+window.pageYOffset-120);}
-      else{f.submit();}
+      else{alert('Submission failed ('+r.status+'). Please email your drawing to quotes@partforge.example directly.');}
     })
-    .catch(function(){f.submit();});
+    .catch(function(){btn.disabled=false;btn.textContent='Submit RFQ → Get Quote in 24h';alert('Network problem — please email your drawing directly.');});
 });
 </script>
 </body>
