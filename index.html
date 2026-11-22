@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PartForge — Custom CNC Machined Parts | Samples in 7 Days</title>
 <meta name="description" content="Custom CNC milling and turning parts from Dongguan, China. Tolerance ±0.01mm, MOQ 50 pcs, samples in 7 days. Upload your drawing for a quote in 24 hours.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PartForge — Custom CNC Machined Parts | Samples in 7 Days">
+<meta property="og:description" content="Precision milled and turned parts. Upload your drawing — quotation and DFM feedback within 24 hours.">
+<meta property="og:url" content="https://huangrunshuaige.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a6fa8'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EPF%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   --site-bg:#f6f8fa; --site-fg:#0f1b2d; --site-accent:#0a6fa8; --site-on-accent:#ffffff;
@@ -12,22 +17,24 @@
   --site-radius:10px; --site-space:1; --site-type:1;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{background:var(--site-bg);color:var(--site-fg);font-family:var(--site-font);line-height:1.6}
 .wrap{max-width:1080px;margin:0 auto;padding:calc(24px * var(--site-space))}
-section{padding:calc(56px * var(--site-space)) 0;border-bottom:1px solid var(--site-border)}
+section{padding:calc(56px * var(--site-space)) 0;border-bottom:1px solid var(--site-border);scroll-margin-top:84px}
 h1{font-size:calc(44px * var(--site-type));line-height:1.15;letter-spacing:-.5px}
 h2{font-size:calc(30px * var(--site-type));margin-bottom:calc(24px * var(--site-space))}
 h3{font-size:calc(18px * var(--site-type))}
 p.sub{color:var(--site-muted);font-size:calc(18px * var(--site-type));margin-top:calc(16px * var(--site-space))}
 a{color:var(--site-accent)}
 header{background:var(--site-surface);border-bottom:1px solid var(--site-border);position:sticky;top:0;z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:calc(14px * var(--site-space)) calc(24px * var(--site-space));max-width:1080px;margin:0 auto}
-.logo{font-weight:800;font-size:calc(22px * var(--site-type));color:var(--site-fg);text-decoration:none}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(14px * var(--site-space)) calc(24px * var(--site-space));max-width:1080px;margin:0 auto}
+.logo{font-weight:800;font-size:calc(22px * var(--site-type));color:var(--site-fg);text-decoration:none;white-space:nowrap}
 .logo span{color:var(--site-accent)}
 .links{display:flex;gap:calc(20px * var(--site-space));align-items:center;flex-wrap:wrap}
-.links a{text-decoration:none;color:var(--site-muted);font-size:15px}
+.links a{text-decoration:none;color:var(--site-muted);font-size:15px;white-space:nowrap}
 .links a:hover{color:var(--site-fg)}
-.btn{display:inline-block;background:var(--site-accent);color:var(--site-on-accent);padding:calc(12px * var(--site-space)) calc(22px * var(--site-space));border-radius:var(--site-radius);text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:16px}
+.links a.btn{color:var(--site-on-accent)}
+.btn{display:inline-block;background:var(--site-accent);color:var(--site-on-accent);padding:calc(12px * var(--site-space)) calc(22px * var(--site-space));border-radius:var(--site-radius);text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:16px;white-space:nowrap}
 .btn.ghost{background:transparent;color:var(--site-accent);border:1.5px solid var(--site-accent)}
 .hero{background:linear-gradient(180deg,var(--site-surface),var(--site-bg))}
 .badge{display:inline-block;background:#e8f3fa;color:var(--site-accent);font-weight:600;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:calc(16px * var(--site-space))}
@@ -36,6 +43,7 @@ header{background:var(--site-surface);border-bottom:1px solid var(--site-border)
 .stat{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(20px * var(--site-space))}
 .stat b{display:block;font-size:calc(26px * var(--site-type));color:var(--site-accent)}
 .stat small{color:var(--site-muted)}
+.fineprint{font-size:12px;color:var(--site-muted);margin-top:12px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:calc(32px * var(--site-space))}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:calc(24px * var(--site-space))}
 .card{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(24px * var(--site-space))}
@@ -47,22 +55,56 @@ header{background:var(--site-surface);border-bottom:1px solid var(--site-border)
 .kit{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
 .kit div{background:var(--site-bg);border-radius:8px;padding:10px;text-align:center}
 .kit b{display:block;font-size:12px;color:var(--site-muted);text-transform:uppercase}
-.kit span{font-size:14px;font-weight:600}
+.kit span{font-size:14px;font-weight:600;word-break:break-word}
 form{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(28px * var(--site-space))}
 label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}
-input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--site-border);border-radius:var(--site-radius);font-size:15px;background:var(--site-bg);color:var(--site-fg);font-family:inherit}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--site-accent)}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--site-border);border-radius:var(--site-radius);font-size:16px;background:var(--site-bg);color:var(--site-fg);font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--site-accent);outline-offset:1px;border-color:var(--site-accent)}
+input[type=file]{font-size:13px;padding:10px}
+input[type=file]::file-selector-button{background:var(--site-accent);color:#fff;border:0;border-radius:8px;padding:8px 12px;margin-right:10px;font-size:13px;cursor:pointer}
+form .btn{margin-top:18px;width:100%;text-align:center}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .note{font-size:13px;color:var(--site-muted);margin-top:12px}
 .ok{display:none;background:#e9f7ef;border:1px solid #bfe3cd;color:#1d6b3a;padding:14px;border-radius:var(--site-radius);margin-top:16px;font-weight:600}
+.steps{list-style:none;margin-top:22px}
+.steps li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--site-border);color:var(--site-muted);font-size:15px}
+.steps li:last-child{border-bottom:0}
+.steps b{flex:0 0 26px;height:26px;border-radius:50%;background:var(--site-accent);color:#fff;text-align:center;line-height:26px;font-size:14px}
 .photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:calc(16px * var(--site-space))}
 .ph{background:var(--site-surface);border:2px dashed var(--site-border);border-radius:var(--site-radius);height:150px;display:flex;align-items:center;justify-content:center;color:var(--site-muted);font-size:13px;text-align:center;padding:10px}
 .trust{display:flex;gap:calc(14px * var(--site-space));flex-wrap:wrap;margin-top:calc(20px * var(--site-space))}
 .pill{background:var(--site-surface);border:1px solid var(--site-border);border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600}
+.faq details{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:16px 20px;margin-bottom:12px}
+.faq summary{font-weight:600;cursor:pointer;font-size:16px}
+.faq details p{margin-top:10px;color:var(--site-muted);font-size:15px}
 footer{padding:calc(36px * var(--site-space)) 0;color:var(--site-muted);font-size:14px;background:var(--site-surface)}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:760px){.grid2,.row{grid-template-columns:1fr}h1{font-size:calc(32px * var(--site-type))}.kit{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  .grid2,.row{grid-template-columns:1fr}
+  h1{font-size:calc(32px * var(--site-type))}
+  .kit{grid-template-columns:repeat(2,1fr)}
+  .links a:not(.btn){display:none}
+  .links{gap:10px;flex-wrap:nowrap}
+  .nav{padding:12px 16px}
+  .logo{font-size:20px}
+  .links a.btn{padding:10px 14px;font-size:14px}
+  section{padding:40px 0;scroll-margin-top:70px}
+}
 </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is your minimum order quantity?","acceptedAnswer":{"@type":"Answer","text":"MOQ is 50 pieces for production runs. There is no minimum for samples and prototypes."}},
+    {"@type":"Question","name":"How fast can I get a quotation and samples?","acceptedAnswer":{"@type":"Answer","text":"Quotation with free DFM feedback within 24 hours of receiving your drawing. Samples typically ship in 7 days."}},
+    {"@type":"Question","name":"Which drawing formats do you accept?","acceptedAnswer":{"@type":"Answer","text":"STEP, IGES, PDF, DWG and DXF. Attach files up to 8 MB in the RFQ form, or paste a cloud link for larger STEP or ZIP files."}},
+    {"@type":"Question","name":"Can you sign an NDA before I send drawings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Request an NDA in the project details field and we sign it before you upload any files."}},
+    {"@type":"Question","name":"What tolerance and inspection documents do you provide?","acceptedAnswer":{"@type":"Answer","text":"Sustained tolerance down to ±0.01 mm. Every shipment includes dimensional inspection reports; full material certificates are available on request."}},
+    {"@type":"Question","name":"How do shipping and payment work?","acceptedAnswer":{"@type":"Answer","text":"Shipping terms (EXW, FOB or DDP, by air or sea) and payment terms are confirmed in each quotation. Typical payment is T/T."}}
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -73,6 +115,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <a href="#capabilities">Capabilities</a>
       <a href="#cases">Cases</a>
       <a href="#quality">Quality</a>
+      <a href="#faq">FAQ</a>
       <a href="#quote" class="btn">Get a Quote</a>
     </div>
   </nav>
@@ -94,12 +137,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="stat"><b>50 pcs</b><small>Minimum order quantity</small></div>
       <div class="stat"><b>40+ machines</b><small>3/5-axis mills &amp; lathes</small></div>
     </div>
+    <p class="fineprint">Figures above are self-declared factory capabilities and are reconfirmed in each written quotation.</p>
   </div>
 </section>
 
 <section id="capabilities">
   <div class="wrap">
     <h2>What We Machine</h2>
+    <p class="sub" style="margin-top:-8px;margin-bottom:20px">Built for medical device, robotics, hydraulics and automation OEMs.</p>
     <div class="cards">
       <div class="card"><h3>CNC Milling (3 &amp; 5-Axis)</h3><ul>
         <li>Parts up to 800 × 500 × 400 mm</li><li>Complex geometries, single setup on 5-axis</li><li>Aluminum · Stainless · Brass · Titanium</li></ul></div>
@@ -120,6 +165,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <h2>Request a Quote (RFQ)</h2>
         <p class="sub">Send us your drawing or 3D model. Typical response:
         <b>quotation within 24 hours</b>, with free DFM (design-for-manufacturing) feedback.</p>
+        <ol class="steps">
+          <li><b>1</b><span>Upload your drawing or paste a cloud link — NDA available before you send files.</span></li>
+          <li><b>2</b><span>Within 24 hours: quotation plus free DFM feedback on cost and manufacturability.</span></li>
+          <li><b>3</b><span>Samples machined and inspected, typically shipped in 7 days.</span></li>
+          <li><b>4</b><span>Production run with inspection reports in every shipment, delivered worldwide.</span></li>
+        </ol>
         <div class="trust">
           <span class="pill">NDA on request</span>
           <span class="pill">STEP / IGES / PDF — attach ≤8MB or paste a link</span>
@@ -148,14 +199,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
             <option>Turn-Mill</option><option>Wire EDM</option><option>Not sure — please advise</option>
           </select></div>
         </div>
+        <label>When do you need parts?</label>
+        <select name="timeline">
+          <option>Immediately — need a production slot</option>
+          <option>Within 2 months</option>
+          <option>Within 6 months</option>
+          <option>Within 12 months</option>
+          <option>Just budgeting / comparing suppliers</option>
+        </select>
         <label>Drawing / 3D Model — attach file (max 8 MB: PDF, DXF, small STEP/IGES)</label>
         <input type="file" name="file" accept=".step,.stp,.iges,.igs,.pdf,.dwg,.dxf,.zip">
         <label>...or paste a cloud link (for large STEP/ZIP drawings)</label>
-        <input name="drawing_link" placeholder="https://drive.google.com/...  (leave both blank and we'll email you a secure upload link)">
+        <input name="drawing_link" placeholder="https://drive.google.com/...">
+        <p class="note">Over 8 MB? Use the link field instead of the file button. Leave both blank and we will email you a secure upload link.</p>
         <label>Project Details</label>
-        <textarea name="msg" rows="3" placeholder="Tolerances, finish, deadline..."></textarea>
-        <br><button class="btn" type="submit">Submit RFQ → Get Quote in 24h</button>
-        <p class="note">Your RFQ goes straight to our quote inbox. We reply within 24 hours. Drawings over 8 MB: use the cloud link instead of the file button.</p>
+        <textarea name="msg" rows="3" placeholder="Tolerances, finish, deadline, NDA request..."></textarea>
+        <button class="btn" type="submit">Submit RFQ → Get Quote in 24h</button>
+        <p class="note">Your RFQ goes straight to our quote inbox. We reply within 24 hours.</p>
         <div class="ok" id="ok">✔ RFQ received — check your inbox for our confirmation. A quote follows within 24 hours.</div>
       </form>
     </div>
@@ -192,6 +252,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="faq" class="faq">
+  <div class="wrap">
+    <h2>Questions Buyers Ask Before Sending Drawings</h2>
+    <details open><summary>What is your minimum order quantity?</summary>
+      <p>MOQ is <b>50 pieces</b> for production runs. There is <b>no minimum for samples</b> and prototypes — one-off parts are welcome.</p></details>
+    <details><summary>How fast can I get a quotation and samples?</summary>
+      <p>Quotation with free DFM feedback <b>within 24 hours</b> of receiving your drawing. Samples typically ship in <b>7 days</b>; urgent jobs can be flagged in the RFQ form.</p></details>
+    <details><summary>Which drawing formats do you accept?</summary>
+      <p>STEP, IGES, PDF, DWG and DXF. Attach files up to <b>8 MB</b> in the form, or paste a cloud link (Drive / Dropbox) for larger STEP or ZIP files.</p></details>
+    <details><summary>Can you sign an NDA before I send drawings?</summary>
+      <p>Yes. Write "NDA required" in Project Details and we sign before you upload anything. Drawings are only shared with the engineers quoting your part.</p></details>
+    <details><summary>What tolerance and inspection documents do you provide?</summary>
+      <p>Sustained tolerance down to <b>±0.01 mm</b>. Every shipment includes dimensional inspection reports; full material certificates and CMM data are available on request.</p></details>
+    <details><summary>How do shipping and payment work?</summary>
+      <p>Shipping terms (EXW, FOB or DDP, by air or sea) and payment terms are confirmed in each quotation — typical payment is T/T. Tell us your destination country in the form so the first quote already includes a shipping option.</p></details>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div><b>PartForge</b> (Dongguan Precision Machining Co., Ltd.)<br>
@@ -216,6 +294,4 @@ document.getElementById('rfq').addEventListener('submit',function(e){
 </script>
 </body>
 </html>
-<!-- repo sync test 2026-11-23 by AI push -->
-
-
+<!-- CH-001 benchmark upgrade + INC-001 mobile layout fixes, 2026-11-23 -->
