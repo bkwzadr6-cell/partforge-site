@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PartForge — Custom CNC Machined Parts | Samples in 7 Days</title>
+<meta name="description" content="Custom CNC milling and turning parts from Dongguan, China. Tolerance ±0.01mm, MOQ 50 pcs, samples in 7 days. Upload your drawing for a quote in 24 hours.">
+<style>
+:root{
+  --site-bg:#f6f8fa; --site-fg:#0f1b2d; --site-accent:#0a6fa8; --site-on-accent:#ffffff;
+  --site-surface:#ffffff; --site-muted:#5b6b7f; --site-border:#dde5ec; --site-font:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --site-radius:10px; --site-space:1; --site-type:1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--site-bg);color:var(--site-fg);font-family:var(--site-font);line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:calc(24px * var(--site-space))}
+section{padding:calc(56px * var(--site-space)) 0;border-bottom:1px solid var(--site-border)}
+h1{font-size:calc(44px * var(--site-type));line-height:1.15;letter-spacing:-.5px}
+h2{font-size:calc(30px * var(--site-type));margin-bottom:calc(24px * var(--site-space))}
+h3{font-size:calc(18px * var(--site-type))}
+p.sub{color:var(--site-muted);font-size:calc(18px * var(--site-type));margin-top:calc(16px * var(--site-space))}
+a{color:var(--site-accent)}
+header{background:var(--site-surface);border-bottom:1px solid var(--site-border);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:calc(14px * var(--site-space)) calc(24px * var(--site-space));max-width:1080px;margin:0 auto}
+.logo{font-weight:800;font-size:calc(22px * var(--site-type));color:var(--site-fg);text-decoration:none}
+.logo span{color:var(--site-accent)}
+.links{display:flex;gap:calc(20px * var(--site-space));align-items:center;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--site-muted);font-size:15px}
+.links a:hover{color:var(--site-fg)}
+.btn{display:inline-block;background:var(--site-accent);color:var(--site-on-accent);padding:calc(12px * var(--site-space)) calc(22px * var(--site-space));border-radius:var(--site-radius);text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:16px}
+.btn.ghost{background:transparent;color:var(--site-accent);border:1.5px solid var(--site-accent)}
+.hero{background:linear-gradient(180deg,var(--site-surface),var(--site-bg))}
+.badge{display:inline-block;background:#e8f3fa;color:var(--site-accent);font-weight:600;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:calc(16px * var(--site-space))}
+.cta-row{margin-top:calc(28px * var(--site-space));display:flex;gap:calc(14px * var(--site-space));flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:calc(24px * var(--site-space));margin-top:calc(40px * var(--site-space))}
+.stat{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(20px * var(--site-space))}
+.stat b{display:block;font-size:calc(26px * var(--site-type));color:var(--site-accent)}
+.stat small{color:var(--site-muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:calc(32px * var(--site-space))}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:calc(24px * var(--site-space))}
+.card{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(24px * var(--site-space))}
+.card h3{margin-bottom:10px}
+.card ul{list-style:none}
+.card li{color:var(--site-muted);font-size:15px;padding:6px 0;border-bottom:1px dashed var(--site-border)}
+.card li:last-child{border-bottom:0}
+.case{border-left:4px solid var(--site-accent)}
+.kit{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.kit div{background:var(--site-bg);border-radius:8px;padding:10px;text-align:center}
+.kit b{display:block;font-size:12px;color:var(--site-muted);text-transform:uppercase}
+.kit span{font-size:14px;font-weight:600}
+form{background:var(--site-surface);border:1px solid var(--site-border);border-radius:var(--site-radius);padding:calc(28px * var(--site-space))}
+label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--site-border);border-radius:var(--site-radius);font-size:15px;background:var(--site-bg);color:var(--site-fg);font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--site-accent)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.note{font-size:13px;color:var(--site-muted);margin-top:12px}
+.ok{display:none;background:#e9f7ef;border:1px solid #bfe3cd;color:#1d6b3a;padding:14px;border-radius:var(--site-radius);margin-top:16px;font-weight:600}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:calc(16px * var(--site-space))}
+.ph{background:var(--site-surface);border:2px dashed var(--site-border);border-radius:var(--site-radius);height:150px;display:flex;align-items:center;justify-content:center;color:var(--site-muted);font-size:13px;text-align:center;padding:10px}
+.trust{display:flex;gap:calc(14px * var(--site-space));flex-wrap:wrap;margin-top:calc(20px * var(--site-space))}
+.pill{background:var(--site-surface);border:1px solid var(--site-border);border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600}
+footer{padding:calc(36px * var(--site-space)) 0;color:var(--site-muted);font-size:14px;background:var(--site-surface)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:760px){.grid2,.row{grid-template-columns:1fr}h1{font-size:calc(32px * var(--site-type))}.kit{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#top">Part<span>Forge</span></a>
+    <div class="links">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#cases">Cases</a>
+      <a href="#quality">Quality</a>
+      <a href="#quote" class="btn">Get a Quote</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="badge">CNC Machining Factory · Dongguan, China</span>
+    <h1>Custom CNC Machined Parts,<br>Samples in 7 Days</h1>
+    <p class="sub">Precision milled and turned parts in aluminum, stainless steel and titanium.
+    Upload your drawing — get a quotation and DFM feedback within 24 hours.</p>
+    <div class="cta-row">
+      <a class="btn" href="#quote">Upload Drawing &amp; Get Quote</a>
+      <a class="btn ghost" href="#capabilities">See Our Capabilities</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>±0.01 mm</b><small>Sustained tolerance</small></div>
+      <div class="stat"><b>7 days</b><small>Sample lead time</small></div>
+      <div class="stat"><b>50 pcs</b><small>Minimum order quantity</small></div>
+      <div class="stat"><b>40+ machines</b><small>3/5-axis mills &amp; lathes</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <h2>What We Machine</h2>
+    <div class="cards">
+      <div class="card"><h3>CNC Milling (3 &amp; 5-Axis)</h3><ul>
+        <li>Parts up to 800 × 500 × 400 mm</li><li>Complex geometries, single setup on 5-axis</li><li>Aluminum · Stainless · Brass · Titanium</li></ul></div>
+      <div class="card"><h3>CNC Turning</h3><ul>
+        <li>Ø3 – Ø220 mm shafts &amp; bushings</li><li>Turn-mill with live tooling</li><li>Bar-fed production runs from 50 pcs</li></ul></div>
+      <div class="card"><h3>Surface Finishing</h3><ul>
+        <li>Anodizing (Type II / III) · Passivation</li><li>Electroplating · Powder coating</li><li>Bead blast · Brushed · Electropolish</li></ul></div>
+      <div class="card"><h3>Secondary Work</h3><ul>
+        <li>Wire EDM &amp; grinding</li><li>Heat treatment coordination</li><li>Assembly &amp; kitting for shipment</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap">
+    <div class="grid2">
+      <div>
+        <h2>Request a Quote (RFQ)</h2>
+        <p class="sub">Send us your drawing or 3D model. Typical response:
+        <b>quotation within 24 hours</b>, with free DFM (design-for-manufacturing) feedback.</p>
+        <div class="trust">
+          <span class="pill">NDA on request</span>
+          <span class="pill">STEP / IGES / PDF accepted</span>
+          <span class="pill">No minimum for samples</span>
+        </div>
+      </div>
+      <form id="rfq" novalidate>
+        <div class="row">
+          <div><label>Name *</label><input required name="name" placeholder="Your name"></div>
+          <div><label>Work Email *</label><input required type="email" name="email" placeholder="you@company.com"></div>
+        </div>
+        <div class="row">
+          <div><label>Country</label><input name="country" placeholder="e.g. United States"></div>
+          <div><label>Quantity</label><input name="qty" placeholder="e.g. 500 pcs / year"></div>
+        </div>
+        <div class="row">
+          <div><label>Material</label><select name="material">
+            <option>Aluminum (6061/7075)</option><option>Stainless Steel (304/316)</option>
+            <option>Brass / Bronze</option><option>Titanium</option><option>Alloy Steel</option><option>Plastic (POM/PEEK)</option><option>Other</option>
+          </select></div>
+          <div><label>Process</label><select name="process">
+            <option>3-Axis Milling</option><option>5-Axis Milling</option><option>CNC Turning</option>
+            <option>Turn-Mill</option><option>Wire EDM</option><option>Not sure — please advise</option>
+          </select></div>
+        </div>
+        <label>Drawing / 3D Model (STEP, IGES, PDF)</label>
+        <input type="file" name="file" accept=".step,.stp,.iges,.igs,.pdf,.dwg,.dxf,.zip">
+        <label>Project Details</label>
+        <textarea name="msg" rows="3" placeholder="Tolerances, finish, deadline..."></textarea>
+        <br><button class="btn" type="submit">Submit RFQ → Get Quote in 24h</button>
+        <p class="note">Demo form: submissions are simulated on this practice site. On the production site this sends directly to the client's RFQ inbox with WeChat/email alerts.</p>
+        <div class="ok" id="ok">✔ RFQ received (demo). In production, this email lands in the client's inbox within seconds, and a reply goes out within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <h2>Recent Parts, Real Numbers</h2>
+    <div class="cards">
+      <div class="card case"><h3>Medical device housing</h3><p class="note">Customer: German instrument maker · 5-axis milled, anodized</p>
+        <div class="kit"><div><b>Material</b><span>6061-T6</span></div><div><b>Process</b><span>5-Axis Mill</span></div><div><b>Tolerance</b><span>±0.01mm</span></div><div><b>Volume</b><span>2,000/mo</span></div></div></div>
+      <div class="card case"><h3>Hydraulic manifold block</h3><p class="note">Customer: US equipment OEM · deep-hole drilling, passivated</p>
+        <div class="kit"><div><b>Material</b><span>316L SS</span></div><div><b>Process</b><span>Mill + EDM</span></div><div><b>Tolerance</b><span>±0.015mm</span></div><div><b>Volume</b><span>800/mo</span></div></div></div>
+      <div class="card case"><h3>Motor shaft, batch run</h3><p class="note">Customer: EU robotics startup · bar-fed turning</p>
+        <div class="kit"><div><b>Material</b><span>40Cr Steel</span></div><div><b>Process</b><span>CNC Turn</span></div><div><b>Tolerance</b><span>±0.01mm</span></div><div><b>Volume</b><span>10,000/mo</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="quality">
+  <div class="wrap">
+    <h2>Quality You Can Audit</h2>
+    <p class="sub">Every shipment ships with dimensional inspection reports. Full-material certificates available on request.</p>
+    <div class="trust" style="margin-bottom:24px">
+      <span class="pill">ISO 9001:2015</span><span class="pill">CMM Reports with Every Order</span><span class="pill">RoHS Compliant Finishes</span>
+    </div>
+    <div class="photos">
+      <div class="ph">Photo slot — workshop, wide shot<br>(awaiting client photos)</div>
+      <div class="ph">Photo slot — 5-axis machine<br>(awaiting client photos)</div>
+      <div class="ph">Photo slot — CMM inspection room<br>(awaiting client photos)</div>
+      <div class="ph">Photo slot — finished parts tray<br>(awaiting client photos)</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>PartForge</b> (Dongguan Precision Machining Co., Ltd.)<br>
+    No. XX, Songshan Lake Industrial Zone, Dongguan, Guangdong, China</div>
+    <div>RFQ: rfq@partforge-example.com<br>Tel/WhatsApp: +86 1XX XXXX XXXX<br>Business License: 91441900XXXXXXXXXX</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('rfq').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  if(!f.name.value||!f.email.value){alert('Please fill in Name and Work Email.');return;}
+  document.getElementById('ok').style.display='block';
+  f.reset();
+});
+</script>
+</body>
+</html>
