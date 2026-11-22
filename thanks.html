@@ -4,26 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Thank you — RFQ received | PartForge</title>
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b0f16">
 <style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f1218;color:#e8ecf3;display:grid;place-items:center;min-height:100vh;margin:0;padding:24px}
-.card{max-width:560px;background:#161b24;border:1px solid #262d3a;border-radius:14px;padding:32px}
-h1{margin:0 0 12px;font-size:26px}
-p{line-height:1.6;color:#b9c3d1;margin:0 0 14px}
-a{color:#5aa9ff}
-ul{margin:0 0 18px;padding-left:18px;color:#b9c3d1;line-height:1.7}
+:root{--accent:#2f81f7;--line:#e2e7ee;--muted:#5c6675}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:#12171f;
+  background:#f5f8fc;font-size:16px;line-height:1.65;display:grid;place-items:center;min-height:100vh;padding:24px}
+.card{width:100%;max-width:620px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(16,24,40,.08);overflow:hidden}
+.top{background:#0b0f16;color:#fff;padding:30px 28px}
+.top .eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8fc0ff}
+.top h1{margin:10px 0 6px;font-size:28px;line-height:1.15;letter-spacing:-.02em}
+.top p{margin:0;color:#b6c0cf;font-size:15.5px}
+.body{padding:26px 28px}
+.body h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 14px}
+ol{margin:0 0 20px;padding-left:22px}
+li{margin-bottom:10px}
+li b{color:#12171f}
+.fine{font-size:13.5px;color:#8b95a3;margin:0 0 18px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+a.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:8px;
+  padding:12px 20px;font-size:15px;font-weight:650;text-decoration:none;white-space:normal;text-align:center}
+a.btn:hover{background:#1b5fc4}
+a.btn.ghost{background:#fff;color:#12171f;border:1px solid var(--line)}
+a.btn.ghost:hover{border-color:#c5cedb}
+@media(max-width:760px){.card .top,.card .body{padding:22px 18px}.top h1{font-size:24px}}
 </style>
 </head>
 <body>
 <div class="card">
-  <h1>✔ RFQ received</h1>
-  <p>Thanks — your request is in our quote inbox. What happens next:</p>
-  <ul>
-    <li>A confirmation email reaches your address within minutes.</li>
-    <li>Our engineer reviews your drawing and replies within 24 hours with price, lead time and tolerance notes.</li>
-    <li>No drawing attached? We will email you a secure upload link.</li>
-  </ul>
-  <p><a href="/">← Back to PartForge</a></p>
+  <div class="top">
+    <span class="eyebrow">Request received</span>
+    <h1>Your RFQ is in our quote inbox.</h1>
+    <p>A confirmation copy goes to the email you gave us. If it is not there within a few minutes, check the spam folder — then resend, it is fine.</p>
+  </div>
+  <div class="body">
+    <h2>What happens next</h2>
+    <ol>
+      <li><b>Within 24 working hours</b> an engineer reads your drawing and replies with unit price, lead time and the process we plan to use.</li>
+      <li><b>DFM note</b> — if a small design change would cut cost or risk, we say so in that same reply, before you commit.</li>
+      <li><b>No file attached?</b> We reply asking for the drawing, or a cloud link, or a photo plus a description of the part.</li>
+      <li><b>You approve the quote</b> → sample or first article with a measurement report → then the batch.</li>
+    </ol>
+    <p class="fine">Everything you sent is used only to quote and make your parts. Send us an NDA first and we will sign it.</p>
+    <div class="btns">
+      <a class="btn" href="/">Back to PartForge</a>
+      <a class="btn ghost" href="/#rfq">Send another part</a>
+    </div>
+  </div>
 </div>
 </body>
 </html>
